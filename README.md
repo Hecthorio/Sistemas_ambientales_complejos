@@ -30,5 +30,9 @@ $$\frac{df(x)}{dx} \approx \frac{f(x+\Delta x) - f(x)}{\Delta x}$$
 
 $$R(t) = \frac{A}{1+Be^{-Ct}}$$
 
+* **U4_proyecto_3** : Evaluación del nivel de oxígeno, $c$ (mg/L), en un río aguas abajo de la descarga de un drenaje a una distancia $x$. Como la variable $x$ esta implicita en la función se tiene que aplicar algun metodo para determinar raíces, en el script aplicamos el método de Newton-Raphson para determinar la distancia $x$ en función de la concentración de oxígeno $c$.
+
+$$c=10-20(e^{-0.15x}-e^{-0.5x})$$
+
 ## Comentarios
 La mayroia de los scripts requeiren modulos de las librerias Numpy y Matplotlib para poder correrlas en el equipo
