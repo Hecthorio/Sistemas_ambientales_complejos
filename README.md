@@ -34,5 +34,36 @@ $$R(t) = \frac{A}{1+Be^{-Ct}}$$
 
 $$c=10-20(e^{-0.15x}-e^{-0.5x})$$
 
+* **U4_proyecto_4** : La parte baja del río Colorado consiste en una serie de cuatro almacenamientos. Puede escribirse los balances de masa para cada uno de ellos, lo que da por resultado el conjunto siguiente de ecuaciones algebraicas lineales simultáneas
+
+$$
+\left[\begin{array}{cccc}
+13.42 & 0 & 0 & 0 \\
+-13.422 & 12.252 & 0 & 0 \\
+0 & -12.252 & 12.377 & 0 \\
+0 & 0 & -12.377 & 11.797
+\end{array}\right]
+\left[\begin{array}{c}
+c_1 \\ 
+c_2 \\ 
+c_3 \\ 
+c_4
+\end{array}\right] =
+\left[\begin{array}{c}
+750 \\ 
+300 \\ 
+102 \\ 
+30
+\end{array}\right]
+$$
+
+Este sistema de ecuaciones es resuelto aplicando el algoritmo de Gauss-Seidel. Se proponen valores iniciales para $c_1$, $c_2$, $c_3$ y $c_4$ y se evaluan nuevos valores usando la siguiente definición.
+
+$$
+c_{i} = \frac{b_{i} - \displaystyle\sum\limits_{j=1,j\neq i}^{m} a_{ij}c_{j} }{a_{ii}}
+$$
+
+Donde $m$ define del vector de variables, $i$ filas, $j$ columnas, $a_{ij}$ son los coeficientes del sistema de ecuaciones y $b_j$ define a los valores del vector solución. Los resultados obtenidos se usan para volver a evaluar la función y así de manera recursiva hasta que los parámetros no cambian con las iteraciones
+
 ## Comentarios
 La mayroia de los scripts requeiren modulos de las librerias Numpy y Matplotlib para poder correrlas en el equipo
