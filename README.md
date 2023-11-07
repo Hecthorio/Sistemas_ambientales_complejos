@@ -65,5 +65,45 @@ $$
 
 Donde $m$ define del vector de variables, $i$ filas, $j$ columnas, $a_{ij}$ son los coeficientes del sistema de ecuaciones y $b_j$ define a los valores del vector solución. Los resultados obtenidos se usan para volver a evaluar la función y así de manera recursiva hasta que los parámetros no cambian con las iteraciones
 
+* **U4_proyecto_5** : Estimación del flujo de agua a partir de datos historicos (base de datos con nombre *precipitacion.csv*) de precipitación pluvial. Este analisis se aborda aplicando la definición de una interpolación lineal.
+
+$$
+y = y_o + (x-x_o)\frac{y_1-y_o}{x_1-x_o}
+$$
+
+**Nota** : modificar la ruta del archivo antes de correr el codigo. 
+
+    ruta = 'C:/Users/hecto/OneDrive/Documentos/ITA/Modelación Sist. Ambientales Complejos AGO-DIC 2023/datos/'
+
+* **U5_proyecto_6** : Estimación del perfil de concentraciones y temperaturas para un reactor de procesamiento por lotes no isotérmico por el método de Euler. El modelo de reactor se presenta a continuación:
+  
+$$
+\frac{dc}{dt}=-ce^{-10/(T+273)}=\phi_1
+$$
+
+$$
+\frac{dT}{dt}=1000ce^{-10/(T+273)}-10(T-20)=\phi_2
+$$
+
+Aplicando el método de Euler y con las siguientes condiciones iniciales $c_o=1 gmol/L$, $T_o=15°C$ cuando $t_o=0$, se puede integrar el sistema de ecuaciones diferenciales ordinarias (ODES) hasta un valor de tiempo final ($t_f$), por ejemplo $t_f=2$.
+
+$$
+c_n = c_o + \phi_1 \Delta t
+$$
+
+$$
+T_n = T_o + \phi_2 \Delta t
+$$
+
+$$
+t_f = t_o + \Delta t
+$$
+
+Donde $c_n$ y $T_n$ son los valores de concentración y temperaturas en el nuevo incremento en el tiempo. Recordar utilizar un valor relativamente pequeño de $\Delta t$ (como $\Delta t = 0.1$) para tener una mejor aproximación a las soluciones reales.
+
 ## Comentarios
-La mayroia de los scripts requeiren modulos de las librerias Numpy y Matplotlib para poder correrlas en el equipo
+La mayoria de los scripts requeiren modulos de las librerias Numpy y Matplotlib para poder correrlas en el equipo, así que antes hay que instalar cada uno de la siguiente manera:
+
+    pip install numpy
+    
+    pip install matplotlib
